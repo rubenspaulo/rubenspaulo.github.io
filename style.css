@@ -1,83 +1,98 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
+:root {
+  font-size: 62.5%;
+  --primary: #0b4f6c;
+  --secondary: #01baef;
+  --tertiary: #000;
+  --background: #fbfbff;
+  --accent: #ba1200;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body,
-button,
-input,
-select,
-textarea {
-  font-family: "Roboto", sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
-:root {
-  font-size: 62.5%;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  background-color: var(--background);
+  color: var(--background);
 }
 
-body {
-  line-height: 1.5;
-  font-size: 1.6em;
-  background-color: #f0f4f8;
-  color: #4299e1;
-}
-h1,
-.subtitulo {
+header {
+  width: 70%;
   text-align: center;
-  margin: 0;
-  color: #2d3748;
-}
-.subtitulo {
-  font-size: 1.3rem;
-  display: block;
-  color: #718096;
+  margin-bottom: 1rem;
 }
 #container {
   width: 85%;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
-  background: rgb(210, 245, 252);
+  background: var(--primary);
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 0 0 1rem 1rem;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  box-shadow:
+    rgba(11, 79, 108, 0.4) 5px 5px,
+    rgba(11, 79, 108, 0.3) 10px 10px,
+    rgba(11, 79, 108, 0.2) 15px 15px,
+    rgba(11, 79, 108, 0.1) 20px 20px,
+    rgba(11, 79, 108, 0.05) 25px 25px;
 }
 #avatar {
-  display: block;
-  width: 150px;
+  width: 200px;
   border-radius: 50%;
-  border: 0.5rem solid aliceblue;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
+  box-shadow: var(--secondary) 0px 0px 3px 3px;
+}
+h1 {
+  color: var(--secondary);
+  font-size: 4rem;
 }
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   text-align: center;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
-ul a {
-  background-color: aliceblue;
+li a {
+  background-color: var(--primary);
   padding: 1rem;
   border-radius: 1rem;
   text-decoration: none;
-  color: #4299e1;
+  color: var(--secondary);
   display: block;
   margin-top: 1rem;
-  border: 0.2rem solid rgb(175, 241, 254);
+  border: 0.2rem solid var(--secondary);
+  box-shadow: #000 0px 3px 3px 0px;
 }
-ul a:hover {
-  background: rgb(175, 241, 254);
+li a:hover {
+  background: var(--secondary);
+  color: var(--primary);
   transition: all 0.3s ease;
+  transform: scale(1.05);
 }
 ul a:active {
   transform: scale(1.01);
 }
-
-
+@media (max-width: 400px) {
+  body {
+    font-size: 1.4rem;
+  }
+  header {
+    width: 100%;
+  }
+  #container {
+    margin: 0 auto 4rem;
+  }
+  #avatar {
+    width: 160px;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}
